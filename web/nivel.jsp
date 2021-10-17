@@ -12,20 +12,16 @@
         <h1>CAMBIAR DE USUARIO RAPIDO SIN LOGEO</h1>
         <c:choose >
             <c:when test="${param.n eq 1}">
-                <c:set var="user" scope="session" value="Agregador"/>
+                <c:set var="user" scope="session" value="Digitador"/>
                 <c:set var="nivel" scope="session" value="1"/>
                 <c:set var="nombre" scope="session" value="Usuario para inserción"/>
             </c:when>
             <c:when test="${param.n eq 2}">
-                <c:set var="user" scope="session" value="Modificador"/>
+                <c:set var="user" scope="session" value="Mantenimiento"/>
                 <c:set var="nivel" scope="session" value="2"/>
-                <c:set var="nombre" scope="session" value="Usuario para actualización"/>
+                <c:set var="nombre" scope="session" value="Usuario para actualización o eliminación"/>
             </c:when>            
-            <c:when test="${param.n eq 3}">
-                <c:set var="user" scope="session" value="Eliminador"/>
-                <c:set var="nivel" scope="session" value="3"/>
-                <c:set var="nombre" scope="session" value="Usuario para eliminación"/>
-            </c:when>
+            
             <c:when test="${param.n eq 0}">
                 <c:set var="user" scope="session" value="Anonimo"/>
                 <c:set var="nivel" scope="session" value="0"/>

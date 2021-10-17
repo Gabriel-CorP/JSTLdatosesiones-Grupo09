@@ -12,7 +12,7 @@
             <c:if test="${not empty param.msg}">
                 <p style="color:red;">Error: ${param.msg}</p>
             </c:if>
-            <form name="login" action="verificar.jsp" method="post">
+            <form name="login" action="validar.jsp" method="post">
                 <!-- Username -->
                 <label for="usuario">Login:</label>
                 <input name="usuario" id="usuario" type="input" value="">

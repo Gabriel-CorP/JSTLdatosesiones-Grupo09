@@ -14,7 +14,7 @@
     <body>
         <h1>Verificación de Usuarios</h1>
         <c:if test="${empty param.usuario or empty param.clave}">
-            <c:redirect url="login.jsp">
+            <c:redirect url="frmlogin.jsp">
                 <c:param name="msg" value="usuario o clave vacios"/>
             </c:redirect>
         </c:if>
@@ -25,7 +25,7 @@
             <sql:param value="${param.clave}"/>
         </sql:query>
         <c:if test="${result.rows[0].cant < 1}"> 
-            <c:redirect url="login.jsp">
+            <c:redirect url="frmlogin.jsp">
                 <c:param name="msg" value="usuario o clave incorrectos"/>
             </c:redirect>
         </c:if> 
