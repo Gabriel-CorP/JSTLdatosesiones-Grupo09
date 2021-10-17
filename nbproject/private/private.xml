@@ -3,7 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Gabri/Documents/NetBeansProjects/Ejemplo_JSTL_EL%20-%20Sessions/web/actualizar.jsp</file>
+            <file>file:/C:/Users/Gabri/Documents/NetBeansProjects/JSTLdatosesiones-Grupo09/web/validar.jsp</file>
+            <file>file:/C:/Users/Gabri/Documents/NetBeansProjects/JSTLdatosesiones-Grupo09/web/seguridad.jsp</file>
+            <file>file:/C:/Users/Gabri/Documents/NetBeansProjects/JSTLdatosesiones-Grupo09/web/logout.jsp</file>
+            <file>file:/C:/Users/Gabri/Documents/NetBeansProjects/JSTLdatosesiones-Grupo09/web/frmlogin.jsp</file>
+            <file>file:/C:/Users/Gabri/Documents/NetBeansProjects/JSTLdatosesiones-Grupo09/web/nivel.jsp</file>
         </group>
     </open-files>
 </project-private>

@@ -21,7 +21,7 @@
    
     <c:if test="${empty sessionScope.user or sessionScope.user eq 'Anonimo'}">
           <span style="color:brown;font-size:5mm;">
-              <a href="login.jsp">Login</a>
+              <a href="frmlogin.jsp">Login</a>
         </span>
     </c:if>
 </td>

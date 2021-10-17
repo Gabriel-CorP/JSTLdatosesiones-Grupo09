@@ -20,7 +20,7 @@
         </c:if>
 
         <sql:query dataSource = "${fuenteDatos}" var = "result">
-            SELECT count(*) as cant from users where login=? and password=?;
+            SELECT count(*) as cant from usuarios where login=? and clave=?;
             <sql:param value="${param.usuario}"/>
             <sql:param value="${param.clave}"/>
         </sql:query>
@@ -30,7 +30,7 @@
             </c:redirect>
         </c:if> 
         <sql:query dataSource = "${fuenteDatos}" var = "datos">
-            SELECT login,nombre,nivel from users where login=? and password=?;
+            SELECT login,nombre,nivel from usuarios where login=? and clave=?;
             <sql:param value="${param.usuario}"/>
             <sql:param value="${param.clave}"/>
         </sql:query>
