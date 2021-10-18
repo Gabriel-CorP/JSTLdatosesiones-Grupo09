@@ -22,7 +22,7 @@
         <p>*observe que en la tabla el registr agregado se marca con fondo verde</p>
         <c:if test="${empty param.age or empty param.first or empty param.last or empty param.xage}">
             <c:redirect url="error.jsp">
-                <c:param name="tipo" value="parametro"/>
+                <c:param name="tipo" value="insert"/>
                 <c:param name="destino" value="index.jsp"/>
             </c:redirect>
         </c:if>

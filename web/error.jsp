@@ -12,8 +12,8 @@
                 <c:when test="${param.tipo eq 'contexto'}">
                     Error, intento de ejecutar una jsp, la cual debe estar en un contexto dentro de otra jsp
                 </c:when>
-                <c:when test="${param.tipo eq 'parametro'}">
-                    Error, intento de ejecutar una jsp, sin proporcionar los parametros necesarios
+                <c:when test="${param.tipo eq 'insert'}">
+                    Error, intento de ejecutar la jsp insertar, sin proporcionar los parametros necesarios
                 </c:when>                
             </c:choose>
   

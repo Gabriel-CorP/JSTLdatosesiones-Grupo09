@@ -9,17 +9,16 @@
 <c:set var="pageId" value="Consultar" />
 <c:set var="standalone" value="not" />
 <%@ include file="seguridad.jsp" %>
-
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>REALIZAR UNA CONSULTA EN LA TABLA.</title>
         <script>
-            function actualizar(id, last)
+            function actualizar(id, titulo)
             {
-                var nlast = prompt("Ingrese el apellido que reemplaza el actual apellido(" + last + ")");
-                location.href = "actualizar.jsp?id=" + id + "&last=" + last + "&nlast=" + nlast;
+                var ntitulo = prompt("Ingrese el titulo que reemplazara al actual titulo(" + titulo + ")");
+                location.href = "actualizar.jsp?id=" + id + "&titulo=" + titulo + "&ntitulo=" + ntitulo;
             }
             function eliminar(id)
             {
@@ -33,43 +32,75 @@
             
     </head>
     <body>
-        <%@ include file="header.jsp" %>
-        <h1>REALIZAR UNA CONSULTA EN LA TABLA , ACTUALIZAR (apellido) O ELIMINAR UN REGISTRO (id).</h1>
-        <p style="color:darkblue;font-weight:bold;">Instrucciones: 
-            <br>
-            1. Para eliminar , de click sobre el id de la fila que desea eliminar<br>
-            2. Para actualizar, de click sobre el apellido en la fila que desea actualizar(deberá ingresar el nuevo apellido)
-        </p>
-
+        <%@ include file="header.jsp"%>
+        <c:if test="${sessionScope.nivel eq 2}"><!--verificacion de que tipo de usuario es-->
+            <h1>REALIZAR UNA CONSULTA EN LA TABLA , ACTUALIZAR (titulo) O ELIMINAR UN REGISTRO (id).</h1>
+            <p style="color:darkblue;font-weight:bold;">Instrucciones: 
+                <br>
+                1. Para eliminar , de click sobre el id de la fila que desea eliminar<br>
+                2. Para actualizar, de click sobre el apellido en la fila que desea actualizar(deberá ingresar el nuevo titulo)
+            </p>
+        </c:if>
         <sql:query dataSource = "${fuenteDatos}" var = "result">
-            SELECT * from employees;
+            SELECT * from libros;
         </sql:query>
 
         <table border = "1" width = "100%">
             <tr>
-                <th>Emp ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Age</th>
+                <th>Id</th>
+                <th>Isbn</th>
+                <th>Titulo</th>
+                <th>Autor</th>
             </tr>
-
+           <c:if test="${sessionScope.nivel eq 2}"><!--verificacion de que tipo de usuario es-->
             <c:forEach var = "row" items = "${result.rows}">
-                <tr>
-                    <td onclick="eliminar('${row.id}');" 
-                        onmouseover="this.style.backgroundColor='pink';"
-                        onmouseout="this.style.backgroundColor='white';">
-                        <c:out value = "${row.id}"/>
-                    </td>
-                    <td><c:out value = "${row.first}"/></td>
-                    <td onclick="actualizar('${row.id}', '${row.last}');"  
-                        onmouseover="this.style.backgroundColor='green';"
-                        onmouseout="this.style.backgroundColor='white';">
-                        <c:out value = "${row.last}"/>
-                    </td>
-                    <td><c:out value = "${row.age}"/></td>
-                </tr>
-            </c:forEach>
-        </table>
+                    <tr>
+                        <td onclick="eliminar('${row.id}');" 
+                            onmouseover="this.style.backgroundColor='pink';"
+                            onmouseout="this.style.backgroundColor='white';">
+                            <c:out value = "${row.id}"/>
+                        </td>
+                        <td><c:out value = "${row.isbn}"/></td>
+                        <td onclick="actualizar('${row.id}', '${row.titulo}');"  
+                            onmouseover="this.style.backgroundColor='green';"
+                            onmouseout="this.style.backgroundColor='white';">
+                            <c:out value = "${row.titulo}"/>
+                        </td>
+                        <td><c:out value = "${row.autor}"/></td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </c:if>
+           <c:if test="${sessionScope.nivel eq 1}"><!--verificacion de que tipo de usuario es-->
+            <c:forEach var = "row" items = "${result.rows}">
+                    <tr>
+                        <td> 
+                            <c:out value = "${row.id}"/>
+                        </td>
+                        <td><c:out value = "${row.isbn}"/></td>
+                        <td>  
+                            <c:out value = "${row.titulo}"/>
+                        </td>
+                        <td><c:out value = "${row.autor}"/></td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </c:if>
+           <c:if test="${sessionScope.nivel eq 0}"><!--verificacion de que tipo de usuario es-->
+            <c:forEach var = "row" items = "${result.rows}">
+                    <tr>
+                        <td>
+                            <c:out value = "${row.id}"/>
+                        </td>
+                        <td><c:out value = "${row.isbn}"/></td>
+                        <td>  
+                            <c:out value = "${row.titulo}"/>
+                        </td>
+                        <td><c:out value = "${row.autor}"/></td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </c:if>
         <a href="index.jsp" style="font-size:1cm;color:blue;">RETORNAR A INDEX</a>
     </body>
 </html>
