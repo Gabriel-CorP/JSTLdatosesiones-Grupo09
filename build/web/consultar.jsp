@@ -18,7 +18,7 @@
             function actualizar(id, titulo)
             {
                 var ntitulo = prompt("Ingrese el titulo que reemplazara al actual titulo(" + titulo + ")");
-                location.href = "actualizar.jsp?id=" + id + "&titulo=" + titulo + "&ntitulo=" + ntitulo;
+                location.href = "frmupdate.jsp?id=" + id + "&titulo=" + titulo + "&ntitulo=" + ntitulo;
             }
             function eliminar(id)
             {

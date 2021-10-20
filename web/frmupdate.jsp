@@ -1,5 +1,6 @@
 
 
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import = "java.io.*,java.util.*,java.sql.*"%>
 <%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
@@ -24,69 +25,69 @@
         <%@ include file="header.jsp" %>
         <h1>ACTUALIZAR UN REGISTRO DE LA TABLA</h1>
         <p style="color:blue;font-size: 7mm;">
-            A continuación se cambia al registro ${param.id} el apellido: ${param.last} por este otro: ${param.nlast}</p>
-        <c:if test="${empty param.id or empty param.last or empty param.nlast}">
+            A continuación se cambia al registro ${param.id} el titulo: ${param.titulo} por este otro: ${param.ntitulo}</p>
+        <c:if test="${empty param.id or empty param.titulo or empty param.ntitulo}">
             <c:redirect url="error.jsp">
                 <c:param name="tipo" value="parametro"/>
                 <c:param name="destino" value="index.jsp"/>
             </c:redirect>
         </c:if>           
 
-        <c:set var = "empId" value = "${param.id}"/>
+        <c:set var = "Id" value = "${param.id}"/>
 
         <sql:update dataSource = "${fuenteDatos}" var = "count">
-            UPDATE employees SET last=?  WHERE  id=?
-            <sql:param value="${param.nlast}"/>
-            <sql:param value = "${empId}" />
+            UPDATE libros SET titulo=?  WHERE  id=?
+            <sql:param value="${param.ntitulo}"/>
+            <sql:param value = "${id}" />
         </sql:update>
 
         <sql:query dataSource = "${fuenteDatos}" var = "result">
-            SELECT * from Employees;
+            SELECT * from libros;
         </sql:query>
 
         <table border = "1" width = "100%">
             <tr>
-                <th>Emp ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Age</th>
+                <th>Id</th>
+                <th>Isbn</th>
+                <th>Titulo</th>
+                <th>Autor</th>
             </tr>
 
             <c:forEach var = "row" items = "${result.rows}">
                 <tr class="fila${row.id}">
                     <td><c:out value = "${row.id}"/></td>
-                    <td><c:out value = "${row.first}"/></td>
-                    <td><c:out value = "${row.last}"/></td>
-                    <td><c:out value = "${row.age}"/></td>
+                    <td><c:out value = "${row.isbn}"/></td>
+                    <td><c:out value = "${row.titulo}"/></td>
+                    <td><c:out value = "${row.autor}"/></td>
                 </tr>
             </c:forEach>
         </table>
 
         <sql:update dataSource = "${fuenteDatos}" var = "count">
-            UPDATE employees SET last = ?  WHERE  id=?
-            <sql:param value = "${param.last}" />
-            <sql:param value = "${empId}" />
+            UPDATE libros SET titulo = ?  WHERE  id=?
+            <sql:param value = "${param.titulo}" />
+            <sql:param value = "${id}" />
         </sql:update>
         <sql:query dataSource = "${fuenteDatos}" var = "result">
-            SELECT * from Employees;
+            SELECT * from libros;
         </sql:query>
         <br><br><br>
         <p style="color:blue;font-size: 7mm;">
-            A continuación al registro ${param.id} se reestable el apellido original: ${param.last} siendo el anterior: ${param.nlast}</p>
+            A continuación al registro ${param.id} se reestable el titulo: ${param.titulo} por el: ${param.ntitulo}</p>
         <table border = "1" width = "100%">
             <tr>
-                <th>Emp ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Age</th>
+                <th>Id</th>
+                <th>Isbn</th>
+                <th>Titulo</th>
+                <th>Autor</th>
             </tr>
 
             <c:forEach var = "row" items = "${result.rows}">
                 <tr class="fila${row.id}">
                     <td><c:out value = "${row.id}"/></td>
-                    <td><c:out value = "${row.first}"/></td>
-                    <td><c:out value = "${row.last}"/></td>
-                    <td><c:out value = "${row.age}"/></td>
+                    <td><c:out value = "${row.isbn}"/></td>
+                    <td><c:out value = "${row.titulo}"/></td>
+                    <td><c:out value = "${row.autor}"/></td>
                 </tr>
             </c:forEach>
         </table>    
