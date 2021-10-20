@@ -23,7 +23,7 @@
             function eliminar(id)
             {
                 alert("A continuación se eliminará el registro #"+id);
-                location.href = "eliminar.jsp?id=" + id;
+                location.href = "delete.jsp?id=" + id;
             }
         </script>
         <style type="text/css">
@@ -38,7 +38,7 @@
             <p style="color:darkblue;font-weight:bold;">Instrucciones: 
                 <br>
                 1. Para eliminar , de click sobre el id de la fila que desea eliminar<br>
-                2. Para actualizar, de click sobre el apellido en la fila que desea actualizar(deberá ingresar el nuevo titulo)
+                2. Para actualizar, de click sobre el titulo en la fila que desea actualizar(deberá ingresar el nuevo titulo)
             </p>
         </c:if>
         <sql:query dataSource = "${fuenteDatos}" var = "result">

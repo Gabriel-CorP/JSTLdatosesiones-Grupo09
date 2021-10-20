@@ -39,7 +39,7 @@
                 <a href="consultar.jsp">Mostrar Listado Actual
 
                 </a>                    
-                <c:if test="${sessionScope.nivel eq 2}">(puede ACTUALIZAR)</c:if>
+                <c:if test="${sessionScope.nivel eq 2}">(puede ACTUALIZAR y ELIMINAR)</c:if>
                 <c:if test="${sessionScope.nivel eq 3}">(puede ELIMINAR)</c:if>
                 </li>
             <c:if test="${sessionScope.nivel eq 1}">
@@ -53,12 +53,12 @@
                     1-agrega, 2-actualiza y borra, por lo que si quiere agregar, actualizar o borrar tiene dos opciones:
                 <br><ol>
                     <li>Dar click a login en esta pagina index y luego ingresar uno de los siguientes usuarios<br>
-                Registrador (inserta nada más), Corrector (actualiza), Borrador(elimina), <br>
+                Digitador (inserta nada más), Mantenimient (actualiza y elimina) <br>
                 para todos la clave es: <b style="color:blue;">12345</b>
                 <br></li><li>
                 Sin necesidar de ingresar usuario y clave puede dar click a los vinculos siguientes, y se cargará
                 de manera automática el usuario del tipo respectivo.</P>
-        <a href="nivel.jsp?n=1">User nivel 1(insertar)</a>---<a href="nivel.jsp?n=2">User nivel 2(actualizar)</a>---
+        <a href="nivel.jsp?n=1">User nivel 1(insertar)</a>---<a href="nivel.jsp?n=2">User nivel 2(actualizar y eliminar)</a>---
         <a href="nivel.jsp?n=0">User nivel 0(listar/consultar)</a>---
                     </li></ol>
     </body>

@@ -38,7 +38,7 @@
         <sql:update dataSource = "${fuenteDatos}" var = "count">
             UPDATE libros SET titulo=?  WHERE  id=?
             <sql:param value="${param.ntitulo}"/>
-            <sql:param value = "${id}" />
+            <sql:param value = "${Id}" />
         </sql:update>
 
         <sql:query dataSource = "${fuenteDatos}" var = "result">
