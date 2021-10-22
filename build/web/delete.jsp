@@ -24,7 +24,7 @@
         <h1>ELIMINAR UN REGISTRO DE LA TABLA</h1>
         <c:if test="${empty param.id}">
             <c:redirect url="error.jsp">
-                <c:param name="tipo" value="parametro"/>
+                <c:param name="tipo" value="delete"/>
                 <c:param name="destino" value="index.jsp"/>
             </c:redirect>
         </c:if>    

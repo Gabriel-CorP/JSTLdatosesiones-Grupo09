@@ -28,7 +28,7 @@
             A continuación se cambia al registro ${param.id} el titulo: ${param.titulo} por este otro: ${param.ntitulo}</p>
         <c:if test="${empty param.id or empty param.titulo or empty param.ntitulo}">
             <c:redirect url="error.jsp">
-                <c:param name="tipo" value="parametro"/>
+                <c:param name="tipo" value="frmupdate"/>
                 <c:param name="destino" value="index.jsp"/>
             </c:redirect>
         </c:if>           

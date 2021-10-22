@@ -14,7 +14,13 @@
                 </c:when>
                 <c:when test="${param.tipo eq 'insert'}">
                     Error, intento de ejecutar la jsp insertar, sin proporcionar los parametros necesarios
-                </c:when>                
+                </c:when>     
+                <c:when test="${param.tipo eq 'delete'}">
+                    Error, intento de eleiminar un libro, sin proporcionar los parametros necesarios
+                </c:when>
+                <c:when test="${param.tipo eq 'frmupdate'}">
+                    Error, intento de actualizar un libro, sin proporcionar los parametros necesarios
+                </c:when> 
             </c:choose>
   
         </h1>
