@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Ejemplo usando JSTL + EL</title>
+        <title>Guia 55ab Grupo 09</title>
         <c:if test="${sessionScope.nivel eq 1}">
         <script>
             function insertar() {
@@ -28,12 +28,38 @@
     </head>
     <body>
         <%@ include file="header.jsp" %>
-        <h1>Ejemplo JSP con JSTL(Jsp Standard Tags Library) 
-            + EL (Expression Language) 
-            <span style="color:blue;">+++Manejo de sesiones y variables de sesión. Control de acceso 
-                a paginas y fragmentos de pagina.</span>
+        <h1 style="text-align:center">Guia 55ab 
+            <span style="color:blue;">Grupo de trabajo 09</span>
         </h1>
-        <h2>TPI-115, Ing. Balmore Ortiz</h2>
+        <center>
+        <table border="1" bordercolor="black" cellspacing="0">
+            <tr>
+              <td>Carnet</td> <td>Apellidos </td> <td>Nombres </td>
+            </tr>
+            <tr>
+              <td>AC16082</td> <td>Argueta Cortéz</td> <td>Mario Enrique</td>
+            </tr>
+            <tr>
+              <td>BH16004</td> <td>Barrios Hernandez</td> <td>Bryan Giovanni</td>
+            </tr>
+            <tr>
+              <td>CH17013</td> <td>Castro Henríquez</td> <td>Maira Yesenia</td>
+            </tr>
+            <tr>
+              <td>CP17005</td> <td>Corena Pérez</td> <td>Gabriel Isaí</td>
+            </tr>
+            <tr>
+              <td>HC15005</td> <td>Henríquez Cruz</td> <td>Félix Eduardo</td>
+            </tr>
+            <tr>
+              <td>MV18058</td> <td>Miranda Vásquez</td> <td>Paola Alejandra</td>
+            </tr>
+            <tr>
+              <td>OH18003</td> <td>Oliva Hernández</td> <td>Roberto Alejandro</td>
+            </tr>
+        </table>
+        </center>
+        <h2>Operaciones:</h2>
         <ul>
             <li>
                 <a href="consultar.jsp">Mostrar Listado Actual
